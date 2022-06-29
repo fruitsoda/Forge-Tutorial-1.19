@@ -1,6 +1,7 @@
 package net.hoon.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.hoon.tutorialmod.item.Moditems;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,6 +23,8 @@ public class TutorialMod {
     //Change! Git!
     public TutorialMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        Moditems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
